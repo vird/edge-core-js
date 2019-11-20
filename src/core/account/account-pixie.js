@@ -163,7 +163,7 @@ const accountPixie: TamePixie<AccountProps> = combinePixies({
       if (selfState == null || selfOutput == null) return
 
       // General account state:
-      if (lastState !== selfState) {
+      if (true) {
         lastState = selfState
         if (selfOutput.api != null) {
           update(selfOutput.api)

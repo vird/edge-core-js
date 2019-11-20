@@ -138,14 +138,14 @@ describe('currency wallets', function() {
     await config.changeUserSettings({ txs: { f: { nativeAmount: '200' } } })
     await config.changeUserSettings({ txs: { g: { nativeAmount: '200' } } })
     await snooze(throttleSnooze)
-    // log.assert(['new e f g'])
+    log.assert(['new e f g'])
     // can not work due process.nextTick in disklet node backend
     // can produce 2 different result sequences
-    try {
-      log.assert(['new e f g'])
-    } catch (err) {
-      log.assert(['new e', 'new f g'])
-    }
+    // try {
+    //   log.assert(['new e f g'])
+    // } catch (err) {
+    //   log.assert(['new e', 'new f g'])
+    // }
   })
 
   it('handles tokens', async function() {
